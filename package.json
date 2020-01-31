@@ -1,6 +1,7 @@
 {
-	"name": "dooood",
-	"version": "0.0.0",
+	"name": "cereal",
+	"version": "1.0.0",
+	"license": "MIT",
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
