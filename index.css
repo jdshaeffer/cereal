@@ -12,6 +12,16 @@
   flex: 1;
 }
 
-.no-highlight {
-  background-color: white;
+button {
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.cereal-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  flex: 1;
+  margin-right: 2%;
 }
