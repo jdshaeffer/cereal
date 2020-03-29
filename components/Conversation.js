@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 const Conversation = (props) => {
+  const [color, setColor] = useState('yellow');
+
   let count = props.count;
   let giuseppi = '';
   let giovanni = '';
@@ -25,7 +29,8 @@ const Conversation = (props) => {
 		giuseppi = `YO GIOVANNI COME CHECK THIS GUY OUT`;
 	}
 	if (count >= 90) {
-		giovanni = `huh whatdaya want`;
+    giovanni = `huh whatdaya want`;
+    setColor('white');
 	}
 	if (count >= 105) {
 		giuseppi = `look at this guy he aint stoppin`;
@@ -45,24 +50,14 @@ const Conversation = (props) => {
 
   return (
     <>
-      <div>
-				<p>{giuseppi}</p>
-				<p>{giovanni}</p>
+      <div className='row'>
+				<div className='column'>
+          <p><mark style={{ backgroundColor: color }}>{giuseppi}</mark></p>
+        </div>
+				<div className='column'>
+          <p><mark>{giovanni}</mark></p>
+        </div>
       </div>
-      <style jsx>{`
-        p {
-          display: flex;
-          flex-direction: column;
-          flex-basis: auto;
-          flex: 1;
-        }
-        div {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          width: 100%;
-        }
-      `}</style>
     </>
   )
 }

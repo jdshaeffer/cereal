@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  flex: 1;
+}
+
+.no-highlight {
+  background-color: white;
+}
