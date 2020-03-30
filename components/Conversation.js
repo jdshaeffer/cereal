@@ -10,7 +10,7 @@ const Conversation = (props) => {
 		giovanniColor: 'white'
 	});
 
-	// change highlight only when the speaker is talking
+	// change highlight only to the most recent speaker 
 	useEffect(() => {
 		if (count >= 90) {
 			setColor({

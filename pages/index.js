@@ -24,8 +24,10 @@ const index = () => {
 			<Head>
 				<title>cereal</title>
 			</Head>
+
 			<p>bowls of cereal eaten: {count}</p>
 			<button onClick={() => setCount(Number(localStorage.getItem('bowlCount')) + 1)}>eat cereal</button>
+
 			<Conversation count={count} />
 			<Options count={count} />
 		</>
