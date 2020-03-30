@@ -18,6 +18,10 @@ button {
   display: inline-block;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .cereal-column {
   display: flex;
   flex-direction: column;

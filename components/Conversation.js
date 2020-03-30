@@ -94,16 +94,14 @@ const Conversation = (props) => {
 	}
 
   return (
-    <>
-      <div className='row'>
-				<div className='column'>
-          <p><mark style={{ backgroundColor: color.giuseppiColor }}>{giuseppi}</mark></p>
-        </div>
-				<div className='column'>
-          <p><mark style={{ backgroundColor: color.giovanniColor }}>{giovanni}</mark></p>
-        </div>
-      </div>
-    </>
+		<div className='row'>
+			<div className='column'>
+				<p><mark style={{ backgroundColor: color.giuseppiColor }}>{giuseppi}</mark></p>
+			</div>
+			<div className='column'>
+				<p><mark style={{ backgroundColor: color.giovanniColor }}>{giovanni}</mark></p>
+			</div>
+		</div>
   )
 }
 
