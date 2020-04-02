@@ -20,8 +20,7 @@ const index = () => {
 		localStorage.setItem('bowlCount', count);
 	});
 
-	// callback function that takes in child data
-	const handleChild = (choice) => {
+	const handleChildClick = (choice) => {
 		setChoice(choice);
 	}
 
@@ -35,7 +34,7 @@ const index = () => {
 			<button onClick={() => setCount(Number(localStorage.getItem('bowlCount')) + 1)}>eat cereal</button>
 
 			<Conversation count={count} />
-			<Options count={count} onChildClick={handleChild(choice)} />
+			<Options count={count} onChildClick={handleChildClick} />
 
 			<p>{choice}</p>
 		</>
