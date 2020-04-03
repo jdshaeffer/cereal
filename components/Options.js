@@ -1,31 +1,37 @@
+import { useState, useEffect } from 'react';
+
 const Options = (props) => {
   let count = props.count;
-  let option = null;
+
+  const [option, setOption] = useState(null)
 
   const sendChoice = (event) => {
     props.onChildClick(event.target.innerHTML);
-    // get rid of buttons when one is selected
-    document.getElementById('options').style.display = 'none';
   }
 
-  if (count >= 130) {
-    option = (
-      <div className='row' id='options'>
-        <div className='cereal-column'>
-          <button onClick={sendChoice}>Fruity Pebbles</button>
+  useEffect(() => {
+    if (count === 130) {
+      setOption((
+        <div className='row' id='options'>
+          <div className='cereal-column'>
+            <button onClick={sendChoice}>Fruity Pebbles</button>
+          </div>
+          <div className='cereal-column'>
+            <button onClick={sendChoice}>Raisin Bran</button>
+          </div>
+          <div className='cereal-column'>
+            <button onClick={sendChoice}>Reese's Puffs</button>
+          </div>
+          <div className='cereal-column'>
+            <button onClick={sendChoice}>Corn Flakes</button>
+          </div>
         </div>
-        <div className='cereal-column'>
-          <button onClick={sendChoice}>Raisin Bran</button>
-        </div>
-        <div className='cereal-column'>
-          <button onClick={sendChoice}>Reese's Puffs</button>
-        </div>
-        <div className='cereal-column'>
-          <button onClick={sendChoice}>Corn Flakes</button>
-        </div>
-      </div>
-    );
-  }
+      ));
+    }
+    else {
+      setOption(null);
+    }
+  }, [count])
 
   return option;
 }

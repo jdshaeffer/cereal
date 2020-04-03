@@ -24,6 +24,12 @@ const index = () => {
 		setChoice(choice);
 	}
 
+	const eatCereal = () => {
+		// if (option === null) {
+		// }
+		setCount(count + 1)
+	}
+
 	return (
 		<>
 			<Head>
@@ -32,7 +38,7 @@ const index = () => {
 
 			<p>bowls of cereal eaten: {count}</p>
 			{/* <button onClick={() => setCount(Number(localStorage.getItem('bowlCount')) + 1)}>eat cereal</button> */}
-			<button onClick={() => setCount(count + 1)}>eat cereal</button>
+			<button onClick={eatCereal}>eat cereal</button>
 
 			<Conversation count={count} choice={choice} />
 			<Options count={count} onChildClick={handleChildClick} />
