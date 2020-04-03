@@ -4,11 +4,13 @@ const Options = (props) => {
 
   const sendChoice = (event) => {
     props.onChildClick(event.target.innerHTML);
+    // get rid of buttons when one is selected
+    document.getElementById('options').style.display = 'none';
   }
 
   if (count >= 130) {
     option = (
-      <div className='row'>
+      <div className='row' id='options'>
         <div className='cereal-column'>
           <button onClick={sendChoice}>Fruity Pebbles</button>
         </div>

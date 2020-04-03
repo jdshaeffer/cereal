@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const Conversation = (props) => {
-  let count = props.count;
+	let count = props.count;
+	let choice = props.choice;
   let giuseppi = '';
 	let giovanni = '';
 
