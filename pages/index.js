@@ -2,33 +2,47 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 
 import Conversation from '../components/Conversation';
-import Options from '../components/Options';
 
 const index = () => {
-	const [count, setCount] = useState(130);
-  const [choice, setChoice] = useState('');
+	const [count, setCount] = useState(0);
+	const [choice, setChoice] = useState('');
+	const [option, setOption] = useState(null);
 
-	// run once after the first render
-	// useEffect(() => {
-	// 	const storageData = localStorage.getItem('bowlCount');
-	// 	if (storageData) {
-	// 		setCount(storageData);
-	// 	}
-	// }, []);
-
-	// useEffect(() => {
-	// 	localStorage.setItem('bowlCount', count);
-	// });
-
-	const handleChildClick = (choice) => {
-		setChoice(choice);
+	const sendChoice = (event) => {
+		setChoice(event.target.innerHTML);
 	}
+	
+	const options = [
+		(<div className='row' id='options'>
+			<div className='cereal-column'>
+				<button onClick={sendChoice}>Fruity Pebbles</button>
+			</div>
+			<div className='cereal-column'>
+				<button onClick={sendChoice}>Raisin Bran</button>
+			</div>
+			<div className='cereal-column'>
+				<button onClick={sendChoice}>Reese's Puffs</button>
+			</div>
+			<div className='cereal-column'>
+				<button onClick={sendChoice}>Corn Flakes</button>
+			</div>
+		</div>)
+	];
 
 	const eatCereal = () => {
-		// if (option === null) {
-		// }
-		setCount(count + 1)
+		if (option === null) {
+			setCount(count + 1)
+		}
 	}
+
+	useEffect(() => {
+		if (count === 130) {
+			setOption(options[0]);
+		}
+		else {
+			setOption(null);
+		}
+	}, [count]);
 
 	return (
 		<>
@@ -37,12 +51,10 @@ const index = () => {
 			</Head>
 
 			<p>bowls of cereal eaten: {count}</p>
-			{/* <button onClick={() => setCount(Number(localStorage.getItem('bowlCount')) + 1)}>eat cereal</button> */}
 			<button onClick={eatCereal}>eat cereal</button>
 
 			<Conversation count={count} choice={choice} />
-			<Options count={count} onChildClick={handleChildClick} />
-
+			<div>{option}</div>
 			<p>{choice}</p>
 		</>
 	)

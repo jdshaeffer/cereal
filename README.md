@@ -1,1 +1,1 @@
-hello and stuff
+a clicker game built in react - sharpening some knowledge
