@@ -54,6 +54,7 @@ const Conversation = (props) => {
 	// because useEffect() is only called after each render
 	// can't use setState() in useEffect() unless there's a dependency array
 
+	// updating conversation based on bowls of cereal eaten
 	if (count >= 10) {
 		giuseppi = `woah don't you think that's enough`;
 	}
@@ -92,6 +93,10 @@ const Conversation = (props) => {
 	}
 	if (count >= 120) {
 		giuseppi = `yeah what are you eatin`;
+	}
+	if (choice === 'Reese\'s Puffs') {
+		giovanni = `!!!`;
+		giuseppi = `!!!`;
 	}
 
   return (
