@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Conversation = (props) => {
-	let count = props.count;
-	let choice = props.choice;
+const Conversation = ({ count, choice }) => {
   let giuseppi = '';
 	let giovanni = '';
 
@@ -11,7 +9,7 @@ const Conversation = (props) => {
 		giovanniColor: 'white'
 	});
 
-	// change highlight only to the most recent speaker 
+	// change highlight to the most recent speaker 
 	useEffect(() => {
 		if (count >= 90) {
 			setColor({
@@ -49,10 +47,16 @@ const Conversation = (props) => {
 				giovanniColor: 'white'
 			});
 		}
-	}, [count]);
+		if (choice === 'Reese\'s Puffs') {
+			setColor({
+				giuseppiColor: 'yellow',
+				giovanniColor: 'yellow'
+			});
+		}
+	}, [count, choice]);
 	// passing [] (dependency array) with its dependent as second argument tells useEffect() to be called once
 	// because useEffect() is only called after each render
-	// can't use setState() in useEffect() unless there's a dependency array
+	// can't use useState() in useEffect() unless there's a dependency array
 
 	// updating conversation based on bowls of cereal eaten
 	if (count >= 10) {

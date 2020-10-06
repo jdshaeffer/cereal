@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Conversation from '../components/Conversation';
 
 const index = () => {
-	const [count, setCount] = useState(125);
+	const [count, setCount] = useState(0);
 	const [choice, setChoice] = useState('');
 	const [option, setOption] = useState(null);
 
